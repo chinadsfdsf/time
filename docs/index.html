@@ -1,0 +1,73 @@
+<html>
+    <head>
+
+        <meta http-equiv="content-type"    content="text/html; charset=utf-8" />
+
+        <style>
+
+table, th, td {
+    border: 1px solid black;
+}
+        </style>
+
+        <script>
+            var TTTmyVar = setInterval(TTTmyTimer, 2700);
+function TTTmyTimer() {
+
+    var TTTdynTime00 = new Date();
+
+    
+    document.getElementById('TTTdynTime_0').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"America/Los_Angeles"});
+    
+    document.getElementById('TTTdynTime_1').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Asia/Hong_Kong"});
+    
+    document.getElementById('TTTdynTime_2').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"America/New_York"});
+    
+
+}
+        </script>
+
+
+    </head>
+    <body onload="TTTmyTimer()">
+
+        <table>
+            <tr>
+                <th>idx</th>
+                <th>Name</th>
+                <th>TimeZone</th>
+                <th>city</th>
+                <th>localTime</th>
+            </tr><tr>
+                <td> 0 </td>
+                <td>SFO</td>
+                <td>America/Los_Angeles</td>
+                <td>SanFrancisco</td>
+
+                <td> <a id="TTTdynTime_0"> </a> </td>
+            </tr><tr>
+                <td> 1 </td>
+                <td>HK</td>
+                <td>Asia/Hong_Kong</td>
+                <td>Hongkong</td>
+
+                <td> <a id="TTTdynTime_1"> </a> </td>
+            </tr><tr>
+                <td> 2 </td>
+                <td>EDT</td>
+                <td>America/New_York</td>
+                <td>Washington_DC</td>
+
+                <td> <a id="TTTdynTime_2"> </a> </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
+
+
+
+
