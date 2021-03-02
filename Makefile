@@ -20,19 +20,23 @@ docs/self.png : self_png.txt
 		$@.150x150.forYoutube.png
 	convert \
 		$@ \
-		-resize 576x576 \
+		-resize 384x384 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@.288x288.forYoutube.png
 	convert \
 		$@.288x288.forYoutube.png \
-		-crop 512x576+32+0 \
+		-crop 341x384+21+0 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@.512x576.forYoutube.png 
-	montage -tile 4x -borderwidth 0 -geometry +0+0 \
-		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
-		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
-		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
-		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+	montage -tile 6x -borderwidth 0 -geometry +0+0 \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		-resize 2048 \
+		-crop 2048x1152 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@.2048x1152.forYoutube.png 
 		
