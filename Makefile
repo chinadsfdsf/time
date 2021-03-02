@@ -72,3 +72,6 @@ ga :
 
 m:
 	vim Makefile
+
+X: ga gcX up
+
