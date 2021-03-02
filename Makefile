@@ -13,6 +13,29 @@ all: $(qr_pngS)
 self_link:=https://time.chinadsf.org/
 docs/self.png : self_png.txt
 	$(qrencode)    `cat $<` -o $@
+	convert \
+		$@ \
+		-resize 150x150 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.150x150.forYoutube.png
+	convert \
+		$@ \
+		-resize 576x576 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.288x288.forYoutube.png
+	convert \
+		$@.288x288.forYoutube.png \
+		-crop 512x576+32+0 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.512x576.forYoutube.png 
+	montage -tile 4x -borderwidth 0 -geometry +0+0 \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		$@.512x576.forYoutube.png $@.512x576.forYoutube.png  \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.2048x1152.forYoutube.png 
+		
 
 docs/zftd_youtube.png : zftd_youtube.txt
 	$(qrencode)    `cat $<` -o $@
@@ -25,5 +48,23 @@ s2 :
 	cd docs/ && python3 -m http.server 33221
 
 gs:
-	git status
+	nice -n 17 git status
 
+gc:
+	nice -n 17 git commit -a
+
+up:
+	pwd
+	nice -n 17 git push -u origin master
+
+
+gcXmmm:=$(shell (LC_ALL=C date +"%Y%m%d_%H%M%p" ; cat /etc/timezone )|tr "/\r\n-" _)
+gcX:
+	nice -n 17 git commit -m $(gcXmmm)
+
+
+ga :
+	nice -n 17 git add .
+
+m:
+	vim Makefile
