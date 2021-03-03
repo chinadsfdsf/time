@@ -3,6 +3,7 @@
 
 qr_pngS:=                        \
 	docs/self.png                \
+	docs/zftd_streamyard.png     \
 	docs/zftd_mail.png           \
 	docs/zftd_youtube.png
 
@@ -45,6 +46,9 @@ docs/zftd_youtube.png : zftd_youtube.txt
 	$(qrencode)    `cat $<` -o $@
 
 docs/zftd_mail.png : zftd_mail.txt
+	$(qrencode)    `cat $<` -o $@
+
+docs/zftd_streamyard.png : zftd_streamyard.txt
 	$(qrencode)    `cat $<` -o $@
 
 
