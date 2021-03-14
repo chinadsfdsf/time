@@ -7,7 +7,8 @@ qr_pngS:=                        \
 	docs/zftd_mail.png           \
 	docs/zftd_youtube.png
 
-qrencode := qrencode    --level=high --8bit --size=30
+qrencodeH := qrencode    --level=high   --8bit --size=30
+qrencodeL := qrencode    --level=lowest --8bit --size=30
 
 all: $(qr_pngS)
 	sed -i -e \
@@ -16,7 +17,7 @@ all: $(qr_pngS)
 
 self_link:=https://time.chinadsf.org/
 docs/self.png : self_png.txt
-	$(qrencode)    `cat $<` -o $@
+	$(qrencodeH)    `cat $<` -o $@
 	convert \
 		$@ \
 		-resize 150x150 \
@@ -43,16 +44,23 @@ docs/self.png : self_png.txt
 		-crop 2048x1152 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@.2048x1152.forYoutube.png 
+	$(qrencodeL)    `cat $<` -o $@.L.png
+	convert \
+		$@.L.png \
+		-resize 170x170 \
+		-crop   150x150+10+10 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.150x150.forYoutube.L.png
 		
 
 docs/zftd_youtube.png : zftd_youtube.txt
-	$(qrencode)    `cat $<` -o $@
+	$(qrencodeH)    `cat $<` -o $@
 
 docs/zftd_mail.png : zftd_mail.txt
-	$(qrencode)    `cat $<` -o $@
+	$(qrencodeH)    `cat $<` -o $@
 
 docs/zftd_streamyard.png : zftd_streamyard.txt
-	$(qrencode)    `cat $<` -o $@
+	$(qrencodeH)    `cat $<` -o $@
 
 
 s2 :
