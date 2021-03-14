@@ -10,6 +10,9 @@ qr_pngS:=                        \
 qrencode := qrencode    --level=high --8bit --size=30
 
 all: $(qr_pngS)
+	sed -i -e \
+		"/aaabbbccc01/ s;aaabbbccc01.*$$;aaabbbccc01\" href=\"`cat zftd_streamyard.txt|head -n 1`\">`cat zftd_streamyard.txt|head -n 1`</a></div>;g"  \
+		docs/index.html
 
 self_link:=https://time.chinadsf.org/
 docs/self.png : self_png.txt
