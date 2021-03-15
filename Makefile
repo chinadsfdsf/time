@@ -5,6 +5,7 @@ qr_pngS:=                        \
 	docs/self.png                \
 	docs/zftd_streamyard.png     \
 	docs/zftd_mail.png           \
+	docs/zftd_james_mail.png     \
 	docs/zftd_youtube.png
 
 qrencodeH := qrencode    --level=high   --8bit --size=30
@@ -63,6 +64,9 @@ docs/zftd_youtube.png : zftd_youtube.txt
 	$(qrencodeH)    `cat $<` -o $@
 
 docs/zftd_mail.png : zftd_mail.txt
+	$(qrencodeH)    `cat $<` -o $@
+
+docs/zftd_james_mail.png : zftd_james_mail.txt
 	$(qrencodeH)    `cat $<` -o $@
 
 docs/zftd_streamyard.png : zftd_streamyard.txt
