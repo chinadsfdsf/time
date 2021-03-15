@@ -51,6 +51,12 @@ docs/self.png : self_png.txt
 		-crop   150x150+10+10 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@.150x150.forYoutube.L.png
+	convert \
+		$@.L.png \
+		-resize 340x340 \
+		-crop   300x300+20+20 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@.300x300.forYoutube.L.png
 		
 
 docs/zftd_youtube.png : zftd_youtube.txt
