@@ -94,6 +94,8 @@ gcX:
 
 ga :
 	nice -n 17 git add .
+gd :
+	nice -n 17 git diff
 
 m:
 	vim Makefile
