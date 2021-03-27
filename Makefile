@@ -103,4 +103,4 @@ m:
 X: ga gcX up
 
 s3 :
-	 python3 -m http.server 33223
+	 cd docs && python3 -m http.server 33223
