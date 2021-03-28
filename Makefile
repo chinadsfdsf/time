@@ -140,7 +140,8 @@ mp4/mp412.640x720.png : mp412.xelatex
 		ppm:- | pnmdepth 16 | pnmtopng > \
 		../mp4/$(basename $(notdir $<)).640x720.png \
 
-mp4/mp411.640x720.png  : docs/zftd_streamyard.png
+#mp4/mp411.640x720.png  : docs/zftd_streamyard.png
+mp4/mp411.640x720.png  : docs/self.png
 	convert \
 		$< \
 		-resize 640x720 \
