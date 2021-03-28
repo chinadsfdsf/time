@@ -105,11 +105,12 @@ X: ga gcX up
 s3 :
 	 cd docs && python3 -m http.server 33223
 
-mp4 : mp41.mp4 
-mp41.mp4 : mp41.png 
+mp4 : mp411.mp4 
+mp411.mp4 : mp411.png 
 	convert \
 		$< \
 		-resize 1280x720 \
+		-extent 1280x720 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$<.1280x720.png
 	ffmpeg -loop 1 -i \
@@ -119,3 +120,10 @@ mp41.mp4 : mp41.png
 		-pix_fmt yuv420p \
 		-vf scale=1280:720 \
 		$@
+
+
+t : mp4/mp412.pdf 
+mp4/mp412.pdf : mp4/mp412.xelatex
+	mkdir -p tmp/
+	cd tmp && rm -f $(basename $(notdir $<)).*
+	cd tmp && xelatex ../$<
