@@ -104,3 +104,18 @@ X: ga gcX up
 
 s3 :
 	 cd docs && python3 -m http.server 33223
+
+mp4 : mp41.mp4 
+mp41.mp4 : mp41.png 
+	convert \
+		$< \
+		-resize 1280x720 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$<.1280x720.png
+	ffmpeg -loop 1 -i \
+		$<.1280x720.png \
+		-c:v libx264 \
+		-t 15 \
+		-pix_fmt yuv420p \
+		-vf scale=1280:720 \
+		$@
