@@ -11,7 +11,7 @@ qr_pngS:=                        \
 qrencodeH := qrencode    --level=high   --8bit --size=30
 qrencodeL := qrencode    --level=lowest --8bit --size=30
 
-all: $(qr_pngS)
+all: $(qr_pngS) mp4
 	sed -i -e \
 		"/aaabbbccc01/ s;aaabbbccc01.*$$;aaabbbccc01\" href=\"`cat zftd_streamyard.txt|head -n 1`\">`cat zftd_streamyard.txt|head -n 1`</a></div>;g"  \
 		docs/index.html
@@ -105,25 +105,45 @@ X: ga gcX up
 s3 :
 	 cd docs && python3 -m http.server 33223
 
-mp4 : mp411.mp4 
-mp411.mp4 : mp411.png 
-	convert \
-		$< \
-		-resize 1280x720 \
-		-extent 1280x720 \
-		ppm:- | pnmdepth 1 | pnmtopng > \
-		$<.1280x720.png
+mp4 : mp4/mp41.mp4 
+mp4/mp41.mp4 : mp4/mp41.png 
+	rm -f $@
 	ffmpeg -loop 1 -i \
-		$<.1280x720.png \
+		$<    \
 		-c:v libx264 \
 		-t 15 \
 		-pix_fmt yuv420p \
 		-vf scale=1280:720 \
 		$@
+	cp \
+		$@ \
+		~/Downloads/
 
 
-t : mp4/mp412.pdf 
-mp4/mp412.pdf : mp4/mp412.xelatex
+
+mp4/mp41.png : mp4/mp411.640x720.png mp4/mp412.640x720.png 
+	convert $^ +append $@
+
+mp4/mp412.640x720.png : mp412.xelatex
 	mkdir -p tmp/
 	cd tmp && rm -f $(basename $(notdir $<)).*
 	cd tmp && xelatex ../$<
+	cd tmp && \
+		nice -n 19   pdftoppm -r 300       -png     \
+		$(basename $(notdir $<)).pdf \
+		$(basename $(notdir $<))
+	cd tmp && \
+		convert \
+		$(basename $(notdir $<))-1.png  \
+		-resize 640x720 \
+		-extent 640x720 \
+		ppm:- | pnmdepth 16 | pnmtopng > \
+		../mp4/$(basename $(notdir $<)).640x720.png \
+
+mp4/mp411.640x720.png  : docs/zftd_streamyard.png
+	convert \
+		$< \
+		-resize 640x720 \
+		-extent 640x720 \
+		ppm:- | pnmdepth 1 | pnmtopng > \
+		$@
