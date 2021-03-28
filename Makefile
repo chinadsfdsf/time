@@ -104,6 +104,8 @@ X: ga gcX up
 
 s3 :
 	 cd docs && python3 -m http.server 33223
+s4 :
+	 python3 -m http.server 33224
 
 mp4 : mp4/mp41.mp4 
 mp4/mp41.mp4 : mp4/mp41.png 

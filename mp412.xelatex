@@ -7,10 +7,31 @@
 \usepackage[AutoFakeBold,AutoFakeSlant]{xeCJK}
 \setCJKmainfont[BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
 \setCJKsansfont[AutoFakeSlant=false,
-  BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
+BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
 \setCJKmonofont[ItalicFont=simkai.ttf]{simsun.ttc}
+
 \usepackage{multicol}
 \usepackage{color}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{fontawesome}
+%\usepackage[hidelinks]{hyperref}
+
+\usepackage{pifont}
+\DeclareFontFamily{U}{hands}{}
+\DeclareFontShape{U}{hands}{m}{n}{<-> hands}{}
+
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,decorations.pathmorphing}
+
+\newcommand{\mouseA}{%
+  \begin{tikzpicture}[scale=1.4, line join=round]
+    \draw [rotate=20.9245] (-1.5pt, 0pt) -- ++(up:5pt) -- ++(-5pt, -2pt) -- ++(6.5pt, 17pt)
+                      -- ++(6.5pt, -17pt) -- ++(-5pt, 2pt) -- ++(down:5pt) -- cycle;
+  \end{tikzpicture}%
+}
+
+
 \setlength{\columnseprule}{2pt}
 \def\columnseprulecolor{\color{red}}
 \begin{document}
@@ -34,7 +55,9 @@
 {\rmfamily\mdseries\slshape
 
 \hskip 1em
+{\color{blue} 
 直播預告：  2021.03.29 
+}
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.5em}
@@ -44,16 +67,35 @@
 
 \vskip 1em 
 
-香港六點半2:00pm(14:00), 
+\par 香港六點半2:00pm(14:00), 
 \par 美國三藩市西岸11:00pm(23:00), 
 \par 美國首都DC 東岸2:00am, 
 \par 澳洲悉尼17:00 (5:00pm)
 
 \vskip 1em
 \par 聯繫方式如下：
-\par https://time.chinadsf.org/
-
+\par 
+\href {https://time.chinadsf.org/}
+{
+    \color{red}  
+    \ding{234} 
+    \ding{43}
+    \color{blue}  
+    https://time.chinadsf.org/ 
+    \color{red}  
+    \raisebox{-5pt}{
+        \faExternalLink
     }
+    \hskip 15pt
+    \raisebox{-5pt}{
+        \mouseA
+    }
+    \hskip 15pt
+}
+
+
+
+}
 
 % \end{multicols}
 \end{document}
