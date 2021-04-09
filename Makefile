@@ -6,6 +6,7 @@ qr_pngS:=                        \
 	docs/zftd_streamyard.png     \
 	docs/zftd_mail.png           \
 	docs/zftd_james_mail.png     \
+	docs/james_yt.png 			 \
 	docs/zftd_youtube.png
 
 qrencodeH := qrencode    --level=high   --8bit --size=30
@@ -60,6 +61,9 @@ docs/self.png : self_png.txt
 		$@.300x300.forYoutube.L.png
 		
 
+docs/james_yt.png : james_yt.txt
+	$(qrencodeH)    `cat $<` -o $@
+
 docs/zftd_youtube.png : zftd_youtube.txt
 	$(qrencodeH)    `cat $<` -o $@
 
@@ -107,13 +111,15 @@ s3 :
 s4 :
 	 python3 -m http.server 33224
 
-mp4 : mp4/mp41.mp4 
+mp4 : mp4/mp41.mp4 mp4/mp43.mp4 
 mp4/mp41.mp4 : mp4/mp41.png 
+mp4/mp43.mp4 : mp4/mp43.png 
+mp4/mp41.mp4 , mp4/mp43.mp4 : 
 	rm -f $@
 	ffmpeg -loop 1 -i \
 		$<    \
 		-c:v libx264 \
-		-t 15 \
+		-t 90 \
 		-pix_fmt yuv420p \
 		-vf scale=1280:720 \
 		$@
@@ -124,9 +130,13 @@ mp4/mp41.mp4 : mp4/mp41.png
 
 
 mp4/mp41.png : mp4/mp411.640x720.png mp4/mp412.640x720.png 
+mp4/mp43.png : mp4/mp411.640x720.png mp4/mp413.640x720.png 
+mp4/mp41.png , mp4/mp43.png :
 	convert $^ +append $@
 
 mp4/mp412.640x720.png : mp412.xelatex
+mp4/mp413.640x720.png : mp413.xelatex
+mp4/mp412.640x720.png , mp4/mp413.640x720.png :
 	mkdir -p tmp/
 	cd tmp && rm -f $(basename $(notdir $<)).*
 	cd tmp && xelatex ../$<
