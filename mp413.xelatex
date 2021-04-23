@@ -54,15 +54,12 @@ BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
 
 {\rmfamily\mdseries\slshape
 
-\hskip 0.5em
+% \hskip 0.5em
 {\color{blue} 
     直播預告：  2021.04.09 : 6:30pm(HK)
 }
-
 \setlength{\parindent}{0em}
-\setlength{\parskip}{0.4em}
-
-
+\setlength{\parskip}{0.3em}
 \par 希望大家點擊訂閱。
 \par 如果喜歡，請點贊。
 
@@ -83,7 +80,6 @@ BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
     }
     \hskip 15pt
 }
-
 {
 \fontsize{16}{18} \selectfont
 \href {https://www.youtube.com/channel/UCX03mU8rPDiv5pM0bFcX6-A}
