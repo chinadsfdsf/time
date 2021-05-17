@@ -111,32 +111,34 @@ s3 :
 s4 :
 	 python3 -m http.server 33224
 
-mp4 : mp4/mp41.mp4 mp4/mp43.mp4 
-mp4/mp41.mp4 : mp4/mp41.png 
-mp4/mp43.mp4 : mp4/mp43.png 
-mp4/mp41.mp4 , mp4/mp43.mp4 : 
-	rm -f $@
-	ffmpeg -loop 1 -i \
-		$<    \
-		-c:v libx264 \
-		-t 90 \
-		-pix_fmt yuv420p \
-		-vf scale=1280:720 \
-		$@
-	cp \
-		$@ \
-		~/Downloads/
+define myString01
+`aa1=$$(echo $1|tr '/.' _);echo $${!aa1}`
+endef
 
 
 
-mp4/mp41.png : mp4/mp411.640x720.png mp4/mp412.640x720.png 
-mp4/mp43.png : mp4/mp411.640x720.png mp4/mp413.640x720.png 
-mp4/mp41.png , mp4/mp43.png :
-	convert $^ +append $@
 
+define myFuncCombinePng2
+$$(eval export X$1=$$(shell echo $1|tr '/.' _))
+$$(eval export Y$1=$$($$(X$1)))
+$1: $$(Y$1)
+$1:
+	convert $$(Y$1) +append $1
+clear_objs01 += $1
+endef
+
+export mp4_mp41_png := mp4/mp411.640x720.png mp4/mp412.640x720.png 
+export mp4_mp43_png := mp4/mp411.640x720.png mp4/mp413.640x720.png 
+mp4_pngset:=mp4/mp41.png mp4/mp43.png
+$(foreach aa1,$(mp4_pngset),$(eval $(call myFuncCombinePng2,$(aa1))))
+
+
+
+export mp4_mp412_640x720_png := mp412.xelatex
+export mp4_mp413_640x720_png := mp413.xelatex
 mp4/mp412.640x720.png : mp412.xelatex
 mp4/mp413.640x720.png : mp413.xelatex
-mp4/mp412.640x720.png , mp4/mp413.640x720.png :
+mp4/mp412.640x720.png   mp4/mp413.640x720.png :
 	mkdir -p tmp/
 	cd tmp && rm -f $(basename $(notdir $<)).*
 	cd tmp && xelatex ../$<
@@ -160,3 +162,35 @@ mp4/mp411.640x720.png  : docs/self.png
 		-extent 640x720 \
 		ppm:- | pnmdepth 1 | pnmtopng > \
 		$@
+
+
+
+
+mp4/mp41.mp4   mp4/mp43.mp4 : 
+	rm -f $@
+	ffmpeg -loop 1 -i \
+		$(call myString01,$@)    \
+		-c:v libx264 \
+		-t 90 \
+		-pix_fmt yuv420p \
+		-vf scale=1280:720 \
+		$@
+	cp \
+		$@ \
+		~/Downloads/
+
+
+
+
+define myFunGenMp4
+mp4 : $1 kkkk
+endef
+
+
+export mp4_mp41_mp4 := mp4/mp41.png 
+export mp4_mp43_mp4 := mp4/mp43.png 
+mp4 := mp4/mp41.mp4 mp4/mp43.mp4 
+$(foreach aa1,$(mp4),$(eval $(call myFunGenMp4,$(aa1))))
+
+c clean_mp4_objs :
+	rm -f $(clear_objs01)
