@@ -166,24 +166,43 @@ mp4/mp411.640x720.png  : docs/self.png
 
 
 
-mp4/mp41.mp4   mp4/mp43.mp4 : 
-	rm -f $@
-	ffmpeg -loop 1 -i \
-		$(call myString01,$@)    \
-		-c:v libx264 \
-		-t 90 \
-		-pix_fmt yuv420p \
-		-vf scale=1280:720 \
-		$@
-	cp \
-		$@ \
-		~/Downloads/
+# mp4/mp41.mp4   mp4/mp43.mp4 : 
+# 	rm -f $@
+# 	ffmpeg -loop 1 -i \
+# 		$(call myString01,$@)    \
+# 		-c:v libx264 \
+# 		-t 90 \
+# 		-pix_fmt yuv420p \
+# 		-vf scale=1280:720 \
+# 		$@
+# 	cp \
+# 		$@ \
+# 		~/Downloads/
 
 
 
 
 define myFunGenMp4
-mp4 : $1 kkkk
+#mp4 : $1 kkkk
+$$(eval export MX$1=$$(shell echo $1|tr '/.' _))
+$$(eval export MY$1=$$($$(MX$1)))
+$1: $$(MY$1)
+$1:
+	echo convert... $$(MY$1) +append $1
+	rm -f $1
+	ffmpeg -loop 1 -i \
+		$$(MY$1)    \
+		-c:v libx264 \
+		-t 90 \
+		-pix_fmt yuv420p \
+		-vf scale=1280:720 \
+		$1
+	cp \
+		$1 \
+		~/Downloads/
+clear_objs01 += $1
+mp4 : $1
+
 endef
 
 
@@ -194,3 +213,4 @@ $(foreach aa1,$(mp4),$(eval $(call myFunGenMp4,$(aa1))))
 
 c clean_mp4_objs :
 	rm -f $(clear_objs01)
+
