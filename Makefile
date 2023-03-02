@@ -214,3 +214,5 @@ $(foreach aa1,$(mp4),$(eval $(call myFunGenMp4,$(aa1))))
 c clean_mp4_objs :
 	rm -f $(clear_objs01)
 
+v:
+	vim docs/t1/index.html
