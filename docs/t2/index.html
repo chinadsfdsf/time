@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBELHCYPMB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-<h1>Display a Search Field</h1>
+            gtag('config', 'G-JBELHCYPMB');
+        </script>
+    </head>
 
-<form action="https://developer.android.com/s/results">
-  <label for="qsearch1">Search Google:</label>
-  <input type="search" id="gsearch2" name="q">
-  <input type="submit">
-</form>
+    <body>
 
-</body>
+        <h1>Display a Search Field</h1>
+
+        <form action="https://developer.android.com/s/results">
+            <label for="qsearch1">Search Google:</label>
+            <input type="search" id="gsearch2" name="q">
+            <input type="submit">
+        </form>
+
+    </body>
 </html>
