@@ -1,0 +1,62 @@
+
+\documentclass{article}
+% https://www.overleaf.com/learn/latex/page_size_and_margins : portrait/landscape
+% \usepackage[ letterpaper, margin=0.7in, portrait ]{geometry}
+% \usepackage[paperheight=11in,paperwidth=8.5in]{geometry}
+\usepackage[ paperheight=8in, paperwidth=16in, margin=0.7in ]{geometry}
+\usepackage[AutoFakeBold,AutoFakeSlant]{xeCJK}
+\setCJKmainfont[BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
+\setCJKsansfont[AutoFakeSlant=false,
+BoldFont=simhei.ttf, SlantedFont=simkai.ttf]{simsun.ttc}
+\setCJKmonofont[ItalicFont=simkai.ttf]{simsun.ttc}
+
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{fontawesome}
+%\usepackage[hidelinks]{hyperref}
+
+\usepackage{pifont}
+\DeclareFontFamily{U}{hands}{}
+\DeclareFontShape{U}{hands}{m}{n}{<-> hands}{}
+
+\usepackage{tikz}
+\usetikzlibrary{tikzmark,decorations.pathmorphing}
+
+\newcommand{\mouseA}{%
+  \begin{tikzpicture}[scale=1.4, line join=round]
+    \draw [rotate=20.9245] (-1.5pt, 0pt) -- ++(up:5pt) -- ++(-5pt, -2pt) -- ++(6.5pt, 17pt)
+                      -- ++(6.5pt, -17pt) -- ++(-5pt, 2pt) -- ++(down:5pt) -- cycle;
+  \end{tikzpicture}%
+}
+
+
+\setlength{\columnseprule}{2pt}
+\def\columnseprulecolor{\color{red}}
+\begin{document}
+% set font size : https://www.programmersought.com/article/1714865085/
+% \large
+% \fontsize{14}{16} \selectfont
+% \fontsize{15}{17} \selectfont
+% \fontsize{16}{18} \selectfont
+% \fontsize{17}{19} \selectfont
+% \fontsize{18}{20} \selectfont
+% \fontsize{28}{30} \selectfont
+\fontsize{30}{32} \selectfont
+% \fontsize{38}{40} \selectfont
+% use \pagenumbering{gobble} to switch off page numbering.
+% To switch it on afterwards, use \pagenumbering{arabic} for arabic numbers 
+% or alph, Alph, roman, or Roman for lowercase resp. uppercase alphabetic resp. Roman numbering.
+% \thispagestyle{empty} \pagestyle{empty}
+\pagenumbering{gobble}
+% \begin{multicols}{3}
+
+
+
+大家好想係呢度分享一下呀，點解有決定要黎美國，申請黎美國前所有步驟，同埋到美國之後咁又點樣安頓啦，有啲乜事情需要去做啦，都想阿逐步去分享，或者每一次就分享小小，大家有興趣嘅就再收聽收睇下段，咁第一集叫離港赴美第一集，首先分享，其實我從來無諗過離開香港，冇諗過去美國生活，無諗過係美國的任何國家移民。咁後來點解會走大家都明啦。咁離開香港點解要揀美國，因離開時候其實好多國家都封關，英國當然係絕大部份香港人既選擇，但係無去英國，因為種種原因，咁我就冇得去英國啦。咁由起初唔喺話好迫切話覺得即刻要走到慢慢覺得終於要走嘅時候，早啲走就始終都安心，就算要重新開始或者要時間安靜或者要申請的乜嘢咁都係啊啊局勢未去到最壞的時候黎就都係覺得早走早著，咁所以就好快就決定左要申請美國簽證，咁其實都唔知得唔得嘅，因為我咁大個人都係其實去過一次美國，果次申請去美國嘅旅行簽證嘅經驗黎就麻麻地，因為其實係爭啲申請唔到嘅，大家知道美國其實唔容易發一個旅遊簽證俾一個單身人士而且仲係一個女士添，基於某啲原因加上我有嘅證明啦，咁就俾我去美國啦，我果次只去一兩個禮拜，一切平安順利外同番香港啦，咁所以今次雖然都一樣喺一個單身女士去仲要係宜家哩個時勢啦，有好多人申請簽證，或者話去左美國就未必返嚟，一個人諗住未必得都去申請，網上申請雖然都有一定程序同困難，終於好快見領事，過程亦都好愉快啦，今次就比較順利仔問左幾個問題，答左佢都好順理成章就話信任我，會批我一個10年旅遊簽證，咁佢仲叫我其實以我嘅背景經歷呢其實你去到美國，可以申請以其他組別移民，我驚佢以為我會留美國，急住話我唔係諗住移民，點知佢話提你有這途徑方法唧，咁我就講多謝啦。晏晝見完夜晚已知可翻護照，真係簽咗10年，咁就當然就即搞機票，都係好容易買左機票， 應該最平嘅單程機票，順利離港入美。大家明啦，過去果幾個月黎香港嘅情勢黎都急轉直下，一個普通市民呀姐其實都有需要驚訝，都有機會有危險，當中幾百萬人其實乜嘢政治立場大家都知，就算冇做過乜家都已經可以比人拉，了解多咗聽咗好多分享又有親身體檢，加上自己心願其實雖然無諗過移民但19前已諗住大概兩三年後都可能會離開香港周圍去教學，而宜家咁嘅環境情況就覺得留低做唔到乜野就倒不如離開香港，留一個有用之身，係一個得到安全保護嘅地方應該可以做更加多野，所以為自己為香港會為左好多其他嘅原因都應該離開去做更多既野，咁做唔駛等到唔知發生咗啲乜嘢你控制唔到時，就可能令到你以後人生都再冇任何自由啦，咁而家走你亦都可以言論自由任，可做任何事，安全唔駛擔心，所以一有簽證有機票就執左必須要帶走嘅野同衫就走，咁走時大家已經知道香港機場其實已經嚴格查問出入境嘅人一包括香港居民，好嚴格咁查問，好似想唔俾我走，最終又順利離境上機，入境美國時也在其他港人遇少許阻礙時我也很順利。所以離開前後遇到多嘅嘢同有什麼應該及不應該做嘅資料都會日後逐啲同大家分享。
+
+
+% \end{multicols}
+\end{document}
+
