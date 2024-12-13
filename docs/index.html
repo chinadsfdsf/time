@@ -1,0 +1,361 @@
+<html>
+    <head>
+
+        <meta http-equiv="content-type"    content="text/html; charset=utf-8" />
+
+        <style>
+
+table, th, td {
+    border: 1px solid black;
+}
+        </style>
+
+        <script>
+            var TTTmyVar = setInterval(TTTmyTimer, 2700);
+function TTTmyTimer() {
+
+    var TTTdynTime00 = new Date();
+
+
+    document.getElementById('TTTdynTime_0').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Asia/Hong_Kong"});
+
+    document.getElementById('TTTdynTime_1').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"America/Los_Angeles"});
+
+    document.getElementById('TTTdynTime_2').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"America/New_York"});
+
+    document.getElementById('TTTdynTime_3').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Australia/Sydney"});
+
+    document.getElementById('TTTdynTime_4').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Europe/London"});
+
+    document.getElementById('TTTdynTime_5').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Japan"});
+
+    document.getElementById('TTTdynTime_6').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Europe/Paris"});
+
+    document.getElementById('TTTdynTime_7').innerHTML = 
+        TTTdynTime00.toLocaleString("en-US", {timeZone:"Africa/Nairobi"});
+
+
+}
+        </script>
+
+
+    </head>
+    <body onload="TTTmyTimer()">
+
+        <div style="border:2px ; width: 780px; color: red ">
+            <a href="https://www.youtube.com/channel/UCX03mU8rPDiv5pM0bFcX6-A" >
+                <table> 
+                    <tr style="border:none; text-align:center;   " > <td>
+                            <h3> James 的 Youtube 頻道  </h3>
+                        </td></tr>
+                        <tr style="border:none; text-align:center;   " > <td>
+                                <img width="370" height="370" border="0" align="center"  src="self.png"/>
+                            </td></tr>
+                            <tr> <td>
+                                    <h3> https://www.youtube.com/channel/UCX03mU8rPDiv5pM0bFcX6-A </h3>
+                                </td></tr>
+                </table>
+            </a>
+        </div>
+        <div style="border:none ; width: 780px; color: red ">
+            <a href="https://github.com/grishka/Houseclub/releases/download/1.0.8/Houseclub-release.apk">
+                <h1>
+                    Android Version Clubhouse Download
+                    <br>
+                    安卓版本 Clubhouse 下載鏈接
+                    <br>
+                    請注意：安卓版本中clouhouse這名字已經被註冊，所以，是houseclub；安卓版本clubhouse沒有官方版本；上述我給出的github版本，是開源版本，可以有效防止後門；請不要使用其他閉源版本； houseclub 因為只有一個作者，而不是一群程序員蜂擁而上的產物，所以，功能不完善，只有基本的發言和舉手功能；所以，需要先借來一個iphone 手機，登錄後，設好你的圖標、名字之類的基本資料，當然可以是亂填的；但是，必須要有這個過程，沒有這個過程，單純的android 版本不可以登錄。
+                </h1>
+            </a>
+        </div>
+        <div style="border:none ; width: 780px; color: red ">
+            <h2>
+                手持64血卡的狗賊們！
+                <br>曾經，香港人救你們出苦海。現在香港人有難，你們在哪裡？
+            </h2>
+        </div>
+        <div style="border:none ; width: 780px; color: blue ">
+            最新消息：(2021 March 27）
+            <br> 我剛剛收到一個郵件，一個香港人，Lam,
+            60歲，上過街，被港警跟踪，緊急跑路到 Los Angeles 。
+            剛才與他通話 1 小時。他現在最需要的是尋找庇護住所。
+            我已經給我這邊的幾個牧師說了。他們（黑人白人不是亞洲人）, 
+            正在商議, , 有可能開設一個為香港人設置的專門庇護所。
+            <br>
+            <div style="border:none ; width: 780px; color: red ">
+                <br>誰想60歲還背井離鄉？ 他的艱難，我知道，我理解。
+            </div>
+            <br>
+            <br>各位有什麼建議，可以給我(James）發郵件。
+            <br>朱峰先生的手不方便，請直接打電話或者 signal +61-404-503-960
+            <div style="border:none ; width: 780px; color: red ">
+                <br>共匪萬碎！
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <th>idx</th>
+                <th>Name</th>
+                <th>TimeZone</th>
+                <th>city</th>
+                <th>decription</th>
+                <th>Name2</th>
+                <th>localTime(now)</th>
+            </tr>
+            <tr>
+
+                <td> 0 </td>
+                <td>HK</td>
+                <td>Asia/Hong_Kong</td>
+                <td>Hongkong</td>
+                <td>UTC&#43;8 </td>
+                <td> 香港</td>
+
+                <td> <a id="TTTdynTime_0"> </a> </td>
+            </tr>
+            <tr>
+
+                <td> 1 </td>
+                <td>PDT</td>
+                <td>America/Los_Angeles</td>
+                <td>SanFrancisco(USA)</td>
+                <td>UTC-8/UTC-7 </td>
+                <td> 美国三藩市 西岸</td>
+
+                <td> <a id="TTTdynTime_1"> </a> </td>
+
+            </tr>
+            <tr  style="background: #ebe0e0">
+
+                <td> 2 </td>
+                <td>EDT</td>
+                <td>America/New_York</td>
+                <td>Washington_DC(USA)</td>
+                <td>UTC-5/UTC-4 </td>
+                <td> 美国首都DC 東岸</td>
+
+                <td> <a id="TTTdynTime_2"> </a> </td>
+
+            </tr>
+            <tr>
+
+                <td> 3 </td>
+                <td>AEDT</td>
+                <td>Australia/Sydney</td>
+                <td>Sydney(Australia)</td>
+                <td>UTC&#43;11 </td>
+                <td>澳洲    悉尼</td>
+
+                <td> <a id="TTTdynTime_3"> </a> </td>
+
+            </tr>
+            <tr>
+
+                <td> 4 </td>
+                <td>GMT</td>
+                <td>Europe/London</td>
+                <td>London(UK)</td>
+                <td>UTC&#43;0 </td>
+                <td>英国    伦敦</td>
+
+                <td> <a id="TTTdynTime_4"> </a> </td>
+            </tr>
+            <tr  style="background: #ebe0e0">
+
+                <td> 5 </td>
+                <td>JCT</td>
+                <td>Japan</td>
+                <td>Japan</td>
+                <td>UTC&#43;9 </td>
+                <td>日本</td>
+
+                <td> <a id="TTTdynTime_5"> </a> </td>
+            </tr>
+            <tr>
+
+                <td> 6 </td>
+                <td>CET</td>
+                <td>Europe/Paris</td>
+                <td>Paris(France)</td>
+                <td>UTC&#43;1 </td>
+                <td>法国    巴黎</td>
+
+                <td> <a id="TTTdynTime_6"> </a> </td>
+            </tr>
+            <tr>
+
+                <td> 7 </td>
+                <td>TZS</td>
+                <td>Africa/Nairobi</td>
+                <td>Tanzanian</td>
+                <td>UTC&#43;3 </td>
+                <td>坦桑尼亚</td>
+
+                <td> <a id="TTTdynTime_7"> </a> </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table style="border:none" > 
+            <tr style="border:none" >
+                <td style=" border:none ; height:50px "> </td>
+            </tr >
+            <tr style="border:none; text-align:center;   " >
+                <td colspan="5" >
+                    以下為 streamyard 參與直播的連接：
+                    <br> （只有在直播期間才是有效鏈接）
+                    <div><a id="aaabbbccc01" href="https://streamyard.com/ub6fk3j79m">https://streamyard.com/ub6fk3j79m</a></div>
+
+                </td>
+            </tr >
+            <tr style="border:none" >
+                <td style="border:none; text-align:center; " colspan="5" >
+                    <img width="500" height="500" border="0" align="center"  src="zftd_streamyard.png"/>
+                </td>
+                    <td style=" border:none ; "> 
+                        <table>
+                            <tr>
+                                <td> 香港</td>
+                                <td> 14:00 (2:00pm) </td>
+                            </tr>
+                            <tr>
+                                <td> 美国三藩市 西岸</td>
+                                <td> 11:00pm(23:00) </td>
+                            </tr>
+                            <tr>
+                                <td> 美国首都DC 東岸</td>
+                                <td> 2:00am </td>
+                            </tr>
+                            <tr>
+                                <td>澳洲    悉尼</td>
+                                <td> 17:00 (5:00pm) </td>
+                            </tr>
+                        </table>
+                    </td> 
+            </tr >
+
+
+
+            <tr style="border:none" >
+                <td style=" border:none ; height:50px "> </td>
+            </tr >
+            <tr style="border:none" >
+                <td style=" border:none ; height:50px "> </td>
+            </tr >
+            <tr style="border:none" >
+                <td style="border:none" >
+                    <img width="250" height="250" border="0" align="center"  src="self.png"/>
+                </td>
+                    <td style="border:red; width:13px; background-color:#FF0000; " > </td>
+                    <td style="border:none" >
+                        <img width="250" height="250" border="0" align="center"  src="zftd_youtube.png"/>
+                    </td>
+            </tr>
+                <tr style="border:none; text-align:center;   " >
+                    <td style=" border:none; ">  
+                        <a href="https://time.chinadsf.org/" > 
+                            self        本站网址           </a>
+                        <br> https://time.chinadsf.org/
+                    </td>
+                    <td style="border:red; width:13px; background-color:#FF0000; " > </td>
+                    <td style=" border:none; ">  
+                        <a href="https://www.youtube.com/channel/UCUUYXiXMReKqVh5dvwJdBYg" >
+                            政法天地 youtube     油管地址           </a>
+                        <br> ~
+                    </td>
+                </tr >
+                <tr style="border:none; text-align:center;   " >
+                    <td colspan="5" >
+                        <a href="https://www.youtube.com/channel/UCUUYXiXMReKqVh5dvwJdBYg" >
+                            https://www.youtube.com/channel/UCUUYXiXMReKqVh5dvwJdBYg
+                        </a>
+                    </td>
+                </tr >
+                <tr >
+                    <td style="border:none" >
+                        <img width="250" height="250" border="0" align="center"  src="zftd_james_mail.png"/>
+                    </td>
+                        <td style="border:red; width:13px; background-color:#FF0000; " > </td>
+                        <td style="border:none" >
+                            <img width="250" height="250" border="0" align="center"  src="zftd_mail.png"/>
+                        </td>
+                </tr >
+                <tr >
+                    <td style=" border:none; text-align:center;   ">  
+                        <a href="mailto:jamesyndeng@icloud.com" > 
+                            想聯絡James，請用以下郵件地址： </a>
+                        <br> jamesyndeng@icloud.com
+                    </td>
+                    <td style="border:red; width:13px; background-color:#FF0000; " > </td>
+                    <td style=" border:none; text-align:center;   ">  
+                        <a href="mailto:voof3399@gmail.com" > 
+                            想聯絡朱峯先生，請用以下郵件地址： </a>
+                        <br> voof3399@gmail.com
+                    </td>
+                </tr >
+                <tr style="border:none" >
+                    <td style=" border:none ; height:50px "> </td>
+                </tr >
+        </table>
+
+                    <br>
+
+                    <table style="border:none ; width: 790px;" > 
+                        <tr style="border:none ; width: 785px;" >
+                            <tr> <td colspan="3" > <h4>
+                                        Clubhouse : 
+                                        <br>我不使用 telegram, 原因是風聞 telegram 出賣了香港 telegram 群的資料給黑警。
+                                        <br>
+                                        <br>我有使用 signal ， 需要的請先 email 我再獲得。我不會建立 signal 群，以免有鬼留下記錄。
+                                        <br>
+                                        <br>為什麼使用 clubhouse ? 原因是考慮到共匪控制下的黑警隨時有可能下一秒就出現。
+                                        <br>所以，不能留文字。所以我隻公布 email 和 clubhouse 。
+                                        <br>
+                                        <br> 使用技巧 1：搜索 memehk ，就可以找到香港會，蕭若元先生建的。可以聽到和理非的最新情況。
+                                        <br>
+                                        <br> 使用技巧 2：進入後，可嘗試搜索 "Chinadsf" 聊天室。粵語。
+                                        <br> 這是我建的clubhouse群 ，人很少，希望人逐漸增多。
+                                        <br>
+                                        <br> 我正在努力測試在 clubhouse 中建群。但是，發現，clubhouse 提示2個月之後才允許我建立 club 。 
+                                        <br> clubhouse 中分為 club 和 room 。
+                                        <br> 現在，我只有建立 room 的權限，
+                                        <br> 2個月之後才可以建永久性的 ChinaDSF club。現在是 ChinaDSF room。 
+                                    </h4> </td>
+                            </tr> <tr> 
+                                <td colspan="3" > <h4>
+                                        (2021.03.19：我的4個邀請碼已經派送完畢，暫時沒有了，
+                                        不知道clubhouse 什麼時候再派送；
+                                        <br>2021.03.20 今日又出來3個邀請碼，趕緊清賬。
+                                        <br>
+                                        <br>原來可以不斷出來邀請碼，所以需要的可以發郵件排隊。
+                                        <br>
+                                        <br>急的，請自己去ebay 買。US$ 2.00 每個邀請，不貴
+                                        <br>不急的，發郵件給我，等 clubhouse發放邀請碼，第一時間按排隊順序響應。
+                                    </h4> </td> 
+                            </tr> <tr>
+                                <td colspan="3" style=" border:none ; height:50px ">     </td>
+                            </tr> <tr>
+                            </tr> 
+                    </table>
+                    <br>
+                    <br>
+                    <a href="bt20240504.png"> <img src="bt20240504.png" width="250"> </a> <br> bc1qayx43tvs6fl957apa6wknptemww3zkau8hkhka 
+                    <br>
+                    <br>
+                    <br>
+
+    </body>
+</html>
+
+
+
+
